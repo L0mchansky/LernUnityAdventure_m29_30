@@ -6,8 +6,6 @@ namespace m29_30_task_2
 {
     public class TimerModel : IReadOnlyTimer
     {
-        public event Action Reset;
-
         private ReactiveVariable<float> _remainingTime;
         private float _fullTime;
 
@@ -62,7 +60,6 @@ namespace m29_30_task_2
             }
 
             _remainingTime.Value = _fullTime;
-            Reset?.Invoke();
         }
 
         public IEnumerator Run()

@@ -19,13 +19,11 @@ namespace m29_30_task_2
             _timer = timer;
 
             _timer.RemainingTime.Changed += OnChanged;
-            _timer.Reset += OnReset;
         }
 
         private void OnDestroy()
         {
             _timer.RemainingTime.Changed -= OnChanged;
-            _timer.Reset -= OnReset;
         }
 
         private void OnChanged(float oldTime, float newTime)
@@ -35,13 +33,7 @@ namespace m29_30_task_2
             ViewRender();
         }
 
-        private void OnReset()
-        {
-            ViewReset();
-        }
-
         protected abstract void FillTimerText();
         protected abstract void ViewRender();
-        protected abstract void ViewReset();
     }
 }

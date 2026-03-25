@@ -10,18 +10,11 @@ namespace m29_30_task_2
         [SerializeField] private Slider _slider;
         [SerializeField] private TMP_Text _timerText;
 
-        private const float DefaultNormalizeSlider = 1;
         protected override void ViewRender()
         {
             FillTimerText();
             float normalize = NewTime / Timer.FullTime;
             _slider.value = normalize;
-        }
-
-        protected override void ViewReset()
-        {
-            FillTimerText();
-            _slider.value = DefaultNormalizeSlider;
         }
 
         protected override void FillTimerText()

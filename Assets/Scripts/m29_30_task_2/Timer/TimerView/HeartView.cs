@@ -40,18 +40,6 @@ namespace m29_30_task_2
             FillTimerText();
         }
 
-        protected override void ViewReset()
-        {
-            if (_hearts == null) return;
-
-            foreach (var heart in _hearts)
-            {
-                heart.SetFullHearth();
-            }
-
-            FillTimerText();
-        }
-
         protected override void FillTimerText()
         {
             _timerText.text = $"{Math.Round(NewTime, 1)} / {Timer.FullTime}";
