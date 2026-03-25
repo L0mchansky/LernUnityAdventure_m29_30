@@ -4,24 +4,21 @@ namespace m29_30_task_1
 {
     public class Currency
     {
-        public event Action<int> BalanceChanged;
-
         private CurrencyType _type;
-        private int _value;
+        private ReactiveVariable<int> _amount;
 
         public Currency(CurrencyType currencyType, int value)
         {
-            _value = value;
+            _amount = new ReactiveVariable<int>(value);
             _type = currencyType;
         }
-        public int Value => _value;
+        public IReadOnlyVariable<int> Amount => _amount;
 
         public CurrencyType Type => _type;
 
         public void SetValue(int value)
         {
-            _value = value;
-            BalanceChanged?.Invoke(value);
+            _amount.Value = value;
         }
     }
 }

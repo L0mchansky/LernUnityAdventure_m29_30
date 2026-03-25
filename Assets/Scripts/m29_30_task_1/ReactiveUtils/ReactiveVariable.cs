@@ -2,7 +2,7 @@
 
 namespace m29_30_task_1
 {
-    public class ReactiveVariable<T> where T : IEquatable<T>
+    public class ReactiveVariable<T> : IReadOnlyVariable<T> where T : IEquatable<T>
     {
         public event Action<T, T> Changed;
 

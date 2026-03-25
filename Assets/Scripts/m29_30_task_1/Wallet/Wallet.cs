@@ -11,7 +11,7 @@ namespace m29_30_task_1
             if (value <= 0) return;
             if (TryGetCurrency(type, out Currency currency) == false) return;
 
-            SetValue(type, currency.Value + value);
+            SetValue(type, currency.Amount.Value + value);
         }
 
         public void Spend(CurrencyType type, int value)
@@ -30,7 +30,7 @@ namespace m29_30_task_1
         {
             if (TryGetCurrency(type, out Currency currency))
             {
-                return currency.Value;
+                return currency.Amount.Value;
             }
 
             return 0;
@@ -65,7 +65,7 @@ namespace m29_30_task_1
             if (value <= 0) return false;
             if (TryGetCurrency(type, out Currency currency) == false) return false;
 
-            newValue = currency.Value - value;
+            newValue = currency.Amount.Value - value;
 
             return newValue >= 0;
         }

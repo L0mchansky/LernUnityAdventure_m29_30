@@ -12,17 +12,17 @@ namespace m29_30_task_1 {
         {
             _currency = currency;
 
-            _currency.BalanceChanged += OnBalanceChanged;
+            _currency.Amount.Changed += OnChanged;
         }
 
         private void OnDestroy()
         {
-            _currency.BalanceChanged -= OnBalanceChanged;
+            _currency.Amount.Changed -= OnChanged;
         }
 
-        private void OnBalanceChanged(int value)
+        private void OnChanged(int oldValue, int newValue)
         {
-            currencyUiValue.text = value.ToString();
+            currencyUiValue.text = newValue.ToString();
         }
     }
 }
