@@ -9,7 +9,7 @@ namespace m29_30_task_1
 
         private Wallet _wallet;
 
-        public void Initialize(Wallet wallet, Currency currency)
+        public void Initialize(Wallet wallet, IReadOnlyCurrency currency)
         {
             _wallet = wallet;
 

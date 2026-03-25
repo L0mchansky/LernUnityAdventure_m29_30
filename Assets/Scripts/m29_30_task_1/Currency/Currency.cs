@@ -2,7 +2,7 @@
 
 namespace m29_30_task_1
 {
-    public class Currency
+    public class Currency : IReadOnlyCurrency
     {
         private CurrencyType _type;
         private ReactiveVariable<int> _amount;

@@ -6,9 +6,9 @@ namespace m29_30_task_1 {
     {
         [SerializeField] TMP_Text currencyUiValue;
 
-        private Currency _currency;
+        private IReadOnlyCurrency _currency;
 
-        public void Initialize(Currency currency)
+        public void Initialize(IReadOnlyCurrency currency)
         {
             _currency = currency;
 

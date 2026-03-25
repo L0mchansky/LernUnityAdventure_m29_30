@@ -26,7 +26,7 @@ namespace m29_30_task_1
 
         private void CreateCurrency(CurrencyType type, int value, WalletUIInitializer viewPrefab)
         {
-            Currency currency = _wallet.GetOrCreateCurrency(type, value);
+            IReadOnlyCurrency currency = _wallet.GetOrCreateCurrency(type, value);
 
             if (viewPrefab != null)
             {

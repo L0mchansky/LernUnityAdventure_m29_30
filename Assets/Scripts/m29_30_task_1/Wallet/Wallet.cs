@@ -36,7 +36,7 @@ namespace m29_30_task_1
             return 0;
         }
 
-        public Currency GetOrCreateCurrency(CurrencyType type, int initialValue = 0)
+        public IReadOnlyCurrency GetOrCreateCurrency(CurrencyType type, int initialValue = 0)
         {
             Currency currency = null;
 
