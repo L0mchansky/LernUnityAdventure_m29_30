@@ -1,0 +1,78 @@
+using System.Collections.Generic;
+
+namespace m29_30_task_1
+{
+    public class Wallet
+    {
+        private Dictionary<CurrencyType, Currency> _currencies = new();
+
+        public void AddValue(CurrencyType type, int value)
+        {
+            if (value <= 0) return;
+            if (TryGetCurrency(type, out Currency currency) == false) return;
+
+            SetValue(type, currency.Value + value);
+        }
+
+        public void Spend(CurrencyType type, int value)
+        {
+            if (TryGetNewValueAfterSpend(type, value, out int newValue) == false) return;
+
+            SetValue(type, newValue);
+        }
+
+        public bool CanSpend(CurrencyType type, int value)
+        {
+            return TryGetNewValueAfterSpend(type, value, out _);
+        }
+
+        public int GetValue(CurrencyType type)
+        {
+            if (TryGetCurrency(type, out Currency currency))
+            {
+                return currency.Value;
+            }
+
+            return 0;
+        }
+
+        public Currency GetOrCreateCurrency(CurrencyType type, int initialValue = 0)
+        {
+            Currency currency = null;
+
+            if (TryGetCurrency(type, out currency))
+            {
+                return currency;
+            }
+
+            currency = new(type, initialValue);
+            _currencies.Add(type, currency);
+            return currency;
+        }
+
+        private void SetValue(CurrencyType type, int value)
+        {
+            if (TryGetCurrency(type, out Currency currency))
+            {
+                currency.SetValue(value);
+            }
+        }
+
+        private bool TryGetNewValueAfterSpend(CurrencyType type, int value, out int newValue)
+        {
+            newValue = 0;
+
+            if (value <= 0) return false;
+            if (TryGetCurrency(type, out Currency currency) == false) return false;
+
+            newValue = currency.Value - value;
+
+            return newValue >= 0;
+        }
+
+        private bool TryGetCurrency(CurrencyType type, out Currency currency)
+        {
+            return _currencies.TryGetValue(type, out currency);
+        }
+    }
+}
