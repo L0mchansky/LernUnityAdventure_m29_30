@@ -589,16 +589,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1495840921}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 129f986cc8304eb4ebbc88ed950f14e6, type: 3}
+  m_Script: {fileID: 11500000, guid: bb15ccd82d27e144585c8e7afc8e6d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _canvas: {fileID: 2057704999}
   _panel: {fileID: 1322615503}
-  _panelPrefabCoin: {fileID: 8867780894503242480, guid: 22d3dc723c3483743a31c71bd6975b9e,
+  _panelPrefabCoin: {fileID: 8912497346939080355, guid: 22d3dc723c3483743a31c71bd6975b9e,
     type: 3}
-  _panelPrefabDiamond: {fileID: 1869767777437727394, guid: a6f4dde345b8dff42a3b98a392998aec,
+  _panelPrefabDiamond: {fileID: 6326624907065942902, guid: a6f4dde345b8dff42a3b98a392998aec,
     type: 3}
-  _panelPrefabEnergy: {fileID: 7206155407431056772, guid: 53b2765d997571d4895eee7fed308c4e,
+  _panelPrefabEnergy: {fileID: 1203793855404443222, guid: 53b2765d997571d4895eee7fed308c4e,
     type: 3}
 --- !u!1 &2057704999
 GameObject:

@@ -254,8 +254,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5728764007352608974}
-        m_TargetAssemblyTypeName: m27_28_task_1.WalletUIController, Assembly-CSharp
+      - m_Target: {fileID: 1391516506743625916}
+        m_TargetAssemblyTypeName: m29_30_task_1.WalletUIController, Assembly-CSharp
         m_MethodName: AddDiamond
         m_Mode: 3
         m_Arguments:
@@ -277,9 +277,9 @@ GameObject:
   - component: {fileID: 2117941909859971594}
   - component: {fileID: 2348837252687216924}
   - component: {fileID: 6916770614439393837}
-  - component: {fileID: 5728764007352608974}
-  - component: {fileID: 1869767777437727394}
-  - component: {fileID: 5776937193584399062}
+  - component: {fileID: 1391516506743625916}
+  - component: {fileID: 6326624907065942902}
+  - component: {fileID: 3038614441044226173}
   m_Layer: 5
   m_Name: Diamond
   m_TagString: Untagged
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5728764007352608974
+--- !u!114 &1391516506743625916
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -357,10 +357,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2118005963727420181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99e8cb8b7e587a846b5ea84ad2d88361, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bafb8e7b31086547937c77f836f4177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1869767777437727394
+--- !u!114 &6326624907065942902
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -369,12 +369,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2118005963727420181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b97dcd122b3bf3c4a9a799d9ce3ed62e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5dd4a87b0fd51d94aa122226ef93949a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controller: {fileID: 5728764007352608974}
-  _view: {fileID: 5776937193584399062}
---- !u!114 &5776937193584399062
+  _controller: {fileID: 1391516506743625916}
+  _view: {fileID: 3038614441044226173}
+--- !u!114 &3038614441044226173
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2118005963727420181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ccdcc53f7347e14aafd36587748e24b, type: 3}
+  m_Script: {fileID: 11500000, guid: 23ee823dff17f4446a077655a1dbdba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currencyUiValue: {fileID: 4145357603135031848}
@@ -582,8 +582,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5728764007352608974}
-        m_TargetAssemblyTypeName: m27_28_task_1.WalletUIController, Assembly-CSharp
+      - m_Target: {fileID: 1391516506743625916}
+        m_TargetAssemblyTypeName: m29_30_task_1.WalletUIController, Assembly-CSharp
         m_MethodName: SubtractDiamond
         m_Mode: 3
         m_Arguments:

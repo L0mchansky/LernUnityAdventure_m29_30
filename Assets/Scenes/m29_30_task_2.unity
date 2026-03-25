@@ -164,7 +164,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 44535810}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d5760d75b0f52d4e8d13c8a67f06584, type: 3}
+  m_Script: {fileID: 11500000, guid: cf027087cca8e164bb84a85788789525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _canvas: {fileID: 1331499666}
@@ -179,9 +179,9 @@ MonoBehaviour:
   - {fileID: 575380316}
   - {fileID: 326569398}
   - {fileID: 1426412302}
-  _hearthView: {fileID: 906953600}
+  _hearthView: {fileID: 906953599}
   _sliderView: {fileID: 672222594}
-  _hearthController: {fileID: 906953599}
+  _hearthController: {fileID: 906953598}
   _sliderController: {fileID: 672222593}
   _fullTimeToTimer: 10
 --- !u!1 &77657696
@@ -267,8 +267,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 906953599}
-        m_TargetAssemblyTypeName: m27_28_task_2.TimerController, Assembly-CSharp
+      - m_Target: {fileID: 906953598}
+        m_TargetAssemblyTypeName: m29_30_task_2.TimerController, Assembly-CSharp
         m_MethodName: StartTimer
         m_Mode: 1
         m_Arguments:
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8de6d97bcd4f54c8f439829a3ed1b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2376f5e696e1b1746b343efa5ebd9697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &193462768
@@ -746,7 +746,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 672222593}
-        m_TargetAssemblyTypeName: m27_28_task_2.TimerController, Assembly-CSharp
+        m_TargetAssemblyTypeName: m29_30_task_2.TimerController, Assembly-CSharp
         m_MethodName: StartTimer
         m_Mode: 1
         m_Arguments:
@@ -1013,7 +1013,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 672222593}
-        m_TargetAssemblyTypeName: m27_28_task_2.TimerController, Assembly-CSharp
+        m_TargetAssemblyTypeName: m29_30_task_2.TimerController, Assembly-CSharp
         m_MethodName: StopTimer
         m_Mode: 1
         m_Arguments:
@@ -1231,7 +1231,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8de6d97bcd4f54c8f439829a3ed1b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2376f5e696e1b1746b343efa5ebd9697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &326569396
@@ -1367,7 +1367,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8de6d97bcd4f54c8f439829a3ed1b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2376f5e696e1b1746b343efa5ebd9697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &430461295
@@ -1454,7 +1454,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 672222593}
-        m_TargetAssemblyTypeName: m27_28_task_2.TimerController, Assembly-CSharp
+        m_TargetAssemblyTypeName: m29_30_task_2.TimerController, Assembly-CSharp
         m_MethodName: ResetTimer
         m_Mode: 1
         m_Arguments:
@@ -1636,7 +1636,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8de6d97bcd4f54c8f439829a3ed1b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2376f5e696e1b1746b343efa5ebd9697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &575380314
@@ -1772,7 +1772,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8de6d97bcd4f54c8f439829a3ed1b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2376f5e696e1b1746b343efa5ebd9697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &589026249
@@ -1960,7 +1960,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 672222591}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d88c75314cc47e40b7b41539ff94365, type: 3}
+  m_Script: {fileID: 11500000, guid: a159ae14199966247a7d4edbaec645a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &672222594
@@ -1972,7 +1972,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 672222591}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 164757202512acb47b6faba9c5b88baf, type: 3}
+  m_Script: {fileID: 11500000, guid: 65fe7e55e743dcd45962df8ac90be941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 1693146542}
@@ -2408,7 +2408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 906953597}
   - component: {fileID: 906953599}
-  - component: {fileID: 906953600}
+  - component: {fileID: 906953598}
   m_Layer: 5
   m_Name: HeartView
   m_TagString: Untagged
@@ -2428,9 +2428,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 77657697}
   - {fileID: 1013884565}
   - {fileID: 1995448020}
-  - {fileID: 77657697}
   - {fileID: 2144780842}
   - {fileID: 1589990343}
   m_Father: {fileID: 739966392}
@@ -2440,6 +2440,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -183.75}
   m_SizeDelta: {x: 1307, y: 367.5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &906953598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906953596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a159ae14199966247a7d4edbaec645a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &906953599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2449,19 +2461,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 906953596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d88c75314cc47e40b7b41539ff94365, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &906953600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 906953596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27354652517daea4abc5bcc433bd3754, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f059925abd608640895a0fb480a6b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _timerText: {fileID: 2144780843}
@@ -2598,7 +2598,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8de6d97bcd4f54c8f439829a3ed1b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2376f5e696e1b1746b343efa5ebd9697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1013884564
@@ -2684,8 +2684,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 906953599}
-        m_TargetAssemblyTypeName: m27_28_task_2.TimerController, Assembly-CSharp
+      - m_Target: {fileID: 906953598}
+        m_TargetAssemblyTypeName: m29_30_task_2.TimerController, Assembly-CSharp
         m_MethodName: StopTimer
         m_Mode: 1
         m_Arguments:
@@ -2867,7 +2867,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8de6d97bcd4f54c8f439829a3ed1b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2376f5e696e1b1746b343efa5ebd9697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1114885159
@@ -3189,7 +3189,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8de6d97bcd4f54c8f439829a3ed1b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2376f5e696e1b1746b343efa5ebd9697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1331499666
@@ -3427,7 +3427,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8de6d97bcd4f54c8f439829a3ed1b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2376f5e696e1b1746b343efa5ebd9697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1589990342
@@ -3742,7 +3742,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8de6d97bcd4f54c8f439829a3ed1b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2376f5e696e1b1746b343efa5ebd9697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1693146540
@@ -4120,8 +4120,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 906953599}
-        m_TargetAssemblyTypeName: m27_28_task_2.TimerController, Assembly-CSharp
+      - m_Target: {fileID: 906953598}
+        m_TargetAssemblyTypeName: m29_30_task_2.TimerController, Assembly-CSharp
         m_MethodName: ResetTimer
         m_Mode: 1
         m_Arguments:
