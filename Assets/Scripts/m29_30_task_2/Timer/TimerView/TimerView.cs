@@ -4,8 +4,8 @@ namespace m29_30_task_2
 {
     public abstract class TimerView: MonoBehaviour
     {
-        private TimerModel _timer;
-        protected TimerModel Timer => _timer;
+        private IReadOnlyTimer _timer;
+        protected IReadOnlyTimer Timer => _timer;
         protected float OldTime { get; private set; }
         protected float NewTime { get; private set; }
 
