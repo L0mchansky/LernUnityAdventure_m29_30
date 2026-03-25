@@ -59,9 +59,10 @@ namespace m29_30_task_2
             {
                 _runner.StopCoroutine(_runCoroutine);
                 _runCoroutine = null;
-                _remainingTime.Value = _fullTime;
-                Reset?.Invoke();
             }
+
+            _remainingTime.Value = _fullTime;
+            Reset?.Invoke();
         }
 
         public IEnumerator Run()
