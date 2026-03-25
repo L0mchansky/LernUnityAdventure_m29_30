@@ -4,12 +4,11 @@ using UnityEngine;
 
 namespace m29_30_task_2
 {
-    public class TimerModel
+    public class TimerModel : IReadOnlyTimer
     {
-        public event Action Ticked;
         public event Action Reset;
 
-        private float _remainingTime;
+        private ReactiveVariable<float> _remainingTime;
         private float _fullTime;
 
         private Coroutine _runCoroutine;
@@ -18,27 +17,25 @@ namespace m29_30_task_2
         public TimerModel(float fullTime, MonoBehaviour runner)
         {
             _fullTime = fullTime;
-            _remainingTime = fullTime;
+            _remainingTime = new ReactiveVariable<float>(fullTime);
             _runner = runner;
         }
 
         public bool IsRunning => _runCoroutine != null;
-        public float RemainingTime => _remainingTime;
+        public IReadOnlyVariable<float> RemainingTime => _remainingTime;
         public float FullTime => _fullTime;
 
         public void Tick(float deltaTime)
         {
             if (_runCoroutine == null) return;
 
-            _remainingTime = _remainingTime - deltaTime;
+            _remainingTime.Value = _remainingTime.Value - deltaTime;
 
-            if (_remainingTime <= 0)
+            if (_remainingTime.Value <= 0)
             {
-                _remainingTime = 0;
+                _remainingTime.Value = 0;
                 Stop();
             }
-
-            Ticked?.Invoke();
         }
 
         public void Start()
@@ -62,7 +59,7 @@ namespace m29_30_task_2
             {
                 _runner.StopCoroutine(_runCoroutine);
                 _runCoroutine = null;
-                _remainingTime = _fullTime;
+                _remainingTime.Value = _fullTime;
                 Reset?.Invoke();
             }
         }

@@ -14,7 +14,7 @@ namespace m29_30_task_2
         protected override void ViewRender()
         {
             FillTimerText();
-            float normalize = Timer.RemainingTime / Timer.FullTime;
+            float normalize = NewTime / Timer.FullTime;
             _slider.value = normalize;
         }
 
@@ -26,7 +26,7 @@ namespace m29_30_task_2
 
         protected override void FillTimerText()
         {
-            _timerText.text = $"{Math.Round(Timer.RemainingTime, 1)} / {Timer.FullTime}";
+            _timerText.text = $"{Math.Round(NewTime, 1)} / {Timer.FullTime}";
         }
     }
 }

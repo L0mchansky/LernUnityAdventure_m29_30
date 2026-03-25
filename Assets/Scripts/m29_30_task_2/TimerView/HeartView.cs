@@ -20,7 +20,7 @@ namespace m29_30_task_2
         {
             if (_hearts == null || _hearts.Count == 0) return;
 
-            float normalized = Timer.RemainingTime / Timer.FullTime;
+            float normalized = NewTime / Timer.FullTime;
             int fullHeartsCount = Mathf.CeilToInt(normalized * _hearts.Count);
 
             fullHeartsCount = Mathf.Clamp(fullHeartsCount, 0, _hearts.Count);
@@ -54,7 +54,7 @@ namespace m29_30_task_2
 
         protected override void FillTimerText()
         {
-            _timerText.text = $"{Math.Round(Timer.RemainingTime, 1)} / {Timer.FullTime}";
+            _timerText.text = $"{Math.Round(NewTime, 1)} / {Timer.FullTime}";
         }
     }
 }

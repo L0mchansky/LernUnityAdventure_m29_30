@@ -6,6 +6,8 @@ namespace m29_30_task_2
     {
         private TimerModel _timer;
         protected TimerModel Timer => _timer;
+        protected float OldTime { get; private set; }
+        protected float NewTime { get; private set; }
 
         private void Start()
         {
@@ -16,18 +18,20 @@ namespace m29_30_task_2
         {
             _timer = timer;
 
-            _timer.Ticked += OnTicked;
+            _timer.RemainingTime.Changed += OnChanged;
             _timer.Reset += OnReset;
         }
 
         private void OnDestroy()
         {
-            _timer.Ticked -= OnTicked;
+            _timer.RemainingTime.Changed -= OnChanged;
             _timer.Reset -= OnReset;
         }
 
-        private void OnTicked()
+        private void OnChanged(float oldTime, float newTime)
         {
+            OldTime = oldTime;
+            NewTime = newTime;
             ViewRender();
         }
 
