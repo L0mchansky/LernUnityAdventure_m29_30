@@ -9,7 +9,6 @@ namespace m29_30_task_2
         public event Action Ticked;
         public event Action Reset;
 
-        private bool _isRunning;
         private float _remainingTime;
         private float _fullTime;
 
@@ -23,13 +22,13 @@ namespace m29_30_task_2
             _runner = runner;
         }
 
-        public bool IsRunning => _isRunning;
+        public bool IsRunning => _runCoroutine != null;
         public float RemainingTime => _remainingTime;
         public float FullTime => _fullTime;
 
         public void Tick(float deltaTime)
         {
-            if (_isRunning == false) return;
+            if (_runCoroutine == null) return;
 
             _remainingTime = _remainingTime - deltaTime;
 
@@ -44,22 +43,28 @@ namespace m29_30_task_2
 
         public void Start()
         {
-            _isRunning = true;
-            _runCoroutine = _runner.StartCoroutine(Run());
+            if (IsRunning == false)
+                _runCoroutine = _runner.StartCoroutine(Run());
         }
 
         public void Stop()
         {
-            _isRunning = false;
-            _runner.StopCoroutine(_runCoroutine);
+            if (IsRunning)
+            {
+                _runner.StopCoroutine(_runCoroutine);
+                _runCoroutine = null;
+            }  
         }
 
         public void Restart()
         {
-            _isRunning = false;
-            _runner.StopCoroutine(_runCoroutine);
-            _remainingTime = _fullTime;
-            Reset?.Invoke();
+            if (IsRunning)
+            {
+                _runner.StopCoroutine(_runCoroutine);
+                _runCoroutine = null;
+                _remainingTime = _fullTime;
+                Reset?.Invoke();
+            }
         }
 
         public IEnumerator Run()
