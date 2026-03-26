@@ -5,7 +5,7 @@ namespace m29_30_task_3
 {
     public class Game : MonoBehaviour
     {
-        [SerializeField] int _maxSize;
+        [SerializeField] int _maxSize = 5;
         private Inventory _inventory;
 
         private void Awake()
