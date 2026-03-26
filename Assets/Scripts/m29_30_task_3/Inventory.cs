@@ -17,11 +17,11 @@ namespace m29_30_task_3
             _maxSize = maxSize;
         }
 
-        public bool TryAdd() => _items.Count == _maxSize;
+        public bool TryAdd() => _items.Count != _maxSize;
 
         public void Add(Item item)
         {
-            if (TryAdd())
+            if (TryAdd() == false)
                 throw new InvenvotryIsFullException();
 
             _items.Add(item);

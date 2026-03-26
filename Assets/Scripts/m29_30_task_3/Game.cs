@@ -17,21 +17,26 @@ namespace m29_30_task_3
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                Debug.Log("KeyCode.Alpha1 нажат. Добавлен 1 Dagger");
+                Debug.Log("KeyCode.Alpha1 нажат. Добавить 1 Dagger");
 
                 if (_inventory.TryAdd())
                 {
                     _inventory.Add(new Item("Dagger"));
+                    Debug.Log("Добавлен");
                 }
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                Debug.Log("KeyCode.Alpha2 нажат. Добавлен 1 Sword");
+                Debug.Log("KeyCode.Alpha2 нажат. Добавить 1 Sword");
 
-                if (_inventory.TryAdd())
+                try
                 {
                     _inventory.Add(new Item("Sword"));
+                }
+                catch (InvenvotryIsFullException)
+                {
+                    //Action
                 }
             }
 
