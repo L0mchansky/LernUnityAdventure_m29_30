@@ -1,45 +1,60 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public class Inventory
+namespace m29_30_task_3
 {
-    public List<Item> _items = new();
-
-    public int CurrentSize => _items.Sum(item => item.Count);
-
-    public int MaxSize;
-
-    public Inventory(List<Item> items, int maxSize)
+    public class Inventory
     {
-        _items = items;
-        MaxSize = maxSize;
-    }
+        public int CurrentSize => _items.Count;
 
-    public void Add(Item item)
-    {
-        if (CurrentSize + item.Count > MaxSize)
-            return;
+        private List<Item> _items = new();
 
-        _items.Add(item);
-    }
+        private int _maxSize;
 
-    public List<Item> GetItemsBy(string name, int count)
-    {
-        _items = new List<Item>();
-
-        for (int i = 0; i < count; i++)
+        public Inventory(int maxSize)
         {
-            Item item = _items.First(item => item.Name == name);
-            _items.Remove(item);
+            _maxSize = maxSize;
         }
 
-        return _items;
-    }
-}
+        public bool TryAdd() => _items.Count == _maxSize;
 
-public class Item
-{
-    public string Name;
-    public int Count;
+        public void Add(Item item)
+        {
+            if (TryAdd())
+                throw new InvenvotryIsFullException();
+
+            _items.Add(item);
+        }
+        public IReadOnlyList<Item> GetAllItems()
+        {
+            return _items.ToList();
+        }
+
+        public void TryGetItemsBy(string name, int count, out IReadOnlyList<Item> foundItems)
+        {
+            foundItems = null;
+
+            if (string.IsNullOrEmpty(name) || count <= 0)
+                throw new ArgumentException($"”казаны не верные входные данные: name: {name}; count: {count}");
+
+            IReadOnlyList<Item> tempFoundItems = _items
+                 .Where(item => item.Name == name)
+                 .Take(count)
+                 .ToList();
+
+            if (tempFoundItems.Count == 0)
+                throw new InventoryItemNotFoundException(name);
+
+            if (tempFoundItems.Count < count)
+                throw new InventoryInsufficientItemsException(count);
+
+            foreach (Item item in tempFoundItems)
+            {
+                _items.Remove(item);
+            }
+
+            foundItems = tempFoundItems;
+        }
+    }
 }
