@@ -298,6 +298,14 @@ MonoBehaviour:
       type: 3}
     <Health>k__BackingField: 150
     <Armor>k__BackingField: 120
+  - _enemyPrefab: {fileID: 5089877618781130262, guid: f285c9896b2c2784c9da74a48be05a96,
+      type: 3}
+    <Health>k__BackingField: 800
+    <Armor>k__BackingField: 60
+  - _enemyPrefab: {fileID: 5089877618781130262, guid: f285c9896b2c2784c9da74a48be05a96,
+      type: 3}
+    <Health>k__BackingField: 20
+    <Armor>k__BackingField: 80
   _elfSettings:
   - _enemyPrefab: {fileID: 3004663001103746931, guid: 6c88695875d673a42bfc6db476befe69,
       type: 3}

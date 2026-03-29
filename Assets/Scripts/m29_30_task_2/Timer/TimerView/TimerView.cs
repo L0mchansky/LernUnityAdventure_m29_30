@@ -14,7 +14,7 @@ namespace m29_30_task_2
             FillTimerText();
         }
 
-        public void Initialize(TimerModel timer)
+        public void Initialize(IReadOnlyTimer timer)
         {
             _timer = timer;
 
