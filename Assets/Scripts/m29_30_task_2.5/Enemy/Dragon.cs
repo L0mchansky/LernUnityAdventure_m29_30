@@ -5,8 +5,8 @@ namespace m29_30_task_2._5
 {
     public class Dragon : Enemy
     {
-        private int _health;
-        private int _attackPower;
+        public int Health { get; private set; }
+        public int AttackPower { get; private set; }
 
         public override void Initialize(EnemySettings settings)
         {
@@ -15,13 +15,8 @@ namespace m29_30_task_2._5
             if (dragonSettings == null)
                 throw new ArgumentException("Expected DragonSettings");
 
-            _health = dragonSettings.Health;
-            _attackPower = dragonSettings.AttackPower;
-        }
-
-        public override void PrintStats()
-        {
-            Debug.Log($"{GetType()} {_health} {_attackPower}");
+            Health = dragonSettings.Health;
+            AttackPower = dragonSettings.AttackPower;
         }
     }
 }

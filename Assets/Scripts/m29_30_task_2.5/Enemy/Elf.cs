@@ -5,8 +5,8 @@ namespace m29_30_task_2._5
 {
     public class Elf : Enemy
     {
-        private int _health;
-        private int _agility;
+        public int Health { get; private set; }
+        public int Agility { get; private set; }
 
         public override void Initialize(EnemySettings settings)
         {
@@ -15,13 +15,8 @@ namespace m29_30_task_2._5
             if (elfSettings == null)
                 throw new ArgumentException("Expected ElfSettings");
 
-            _health = elfSettings.Health;
-            _agility = elfSettings.Agility;
-        }
-
-        public override void PrintStats()
-        {
-            Debug.Log($"{GetType()} {_health} {_agility}");
+            Health = elfSettings.Health;
+            Agility = elfSettings.Agility;
         }
     }
 }

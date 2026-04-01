@@ -5,8 +5,8 @@ namespace m29_30_task_2._5
 {
     public class Ork : Enemy
     {
-        private int _health;
-        private int _armor;
+        public int Health { get; private set; }
+        public int Armor { get; private set; }
 
         public override void Initialize(EnemySettings settings)
         {
@@ -15,13 +15,8 @@ namespace m29_30_task_2._5
             if (orkSettings == null)
                 throw new ArgumentException("Expected OrkSettings");
 
-            _health = orkSettings.Health;
-            _armor = orkSettings.Armor;
-        }
-
-        public override void PrintStats()
-        {
-            Debug.Log($"{GetType()} {_health} {_armor}");
+            Health = orkSettings.Health;
+            Armor = orkSettings.Armor;
         }
     }
 }

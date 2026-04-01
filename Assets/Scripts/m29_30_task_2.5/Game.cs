@@ -10,11 +10,11 @@ namespace m29_30_task_2._5
         [SerializeField] private ElfSettings[] _elfSettings;
         [SerializeField] private DragonSettings[] _dragonSettings;
 
-        private EnemySpawner<EnemySettings> _spawner;
+        private EnemySpawner _spawner;
 
         private void Awake()
         {
-            _spawner = new EnemySpawner<EnemySettings>();
+            _spawner = new EnemySpawner();
         }
 
         private void Start()
@@ -33,7 +33,10 @@ namespace m29_30_task_2._5
                     settings[Random.Range(0, settings.Length)],
                     new Vector3(Random.Range(-15, 15), 0, 0));
 
-            enemy.PrintStats();
+            EnemyView enemyView = enemy.GetComponentInChildren<EnemyView>();
+            
+            if (enemyView != null)
+                enemyView.PrintStats();
         }
     }
 }
