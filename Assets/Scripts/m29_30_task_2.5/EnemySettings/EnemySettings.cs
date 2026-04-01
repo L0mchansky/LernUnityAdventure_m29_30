@@ -1,8 +1,6 @@
-﻿using System;
-namespace m29_30_task_2._5
+﻿namespace m29_30_task_2._5
 {
     public abstract class EnemySettings
     {
-        public abstract Enemy EnemyPrefab { get; }
     }
 }
