@@ -17,21 +17,33 @@ namespace m29_30_task_3
             _maxSize = maxSize;
         }
 
-        public bool TryAdd() => _items.Count != _maxSize;
-
-        public void Add(Item item)
+        public Inventory(int maxSize, List<Item> items)
         {
-            if (TryAdd() == false)
-                throw new InvenvotryIsFullException();
+            _maxSize = maxSize;
+
+            if (items.Count > maxSize)
+                throw new ArgumentException($"Указаны не верные входные данные. Кол-во объектов превышает максимальный размер инвентаря: maxSize: {maxSize}; items.Count: {items.Count}");
+
+            _items = items;
+        }
+
+        public bool CanAdd() => _items.Count != _maxSize;
+
+        public bool TryAdd(Item item)
+        {
+            if (CanAdd() == false)
+                return false;
 
             _items.Add(item);
+
+            return true;
         }
         public IReadOnlyList<Item> GetAllItems()
         {
-            return _items.ToList();
+            return _items;
         }
 
-        public void TryGetItemsBy(string name, int count, out IReadOnlyList<Item> foundItems)
+        public bool TryGetItemsBy(string name, int count, out IReadOnlyList<Item> foundItems)
         {
             foundItems = null;
 
@@ -44,10 +56,10 @@ namespace m29_30_task_3
                  .ToList();
 
             if (tempFoundItems.Count == 0)
-                throw new InventoryItemNotFoundException(name);
+                return false;
 
             if (tempFoundItems.Count < count)
-                throw new InventoryInsufficientItemsException(count);
+                return false;
 
             foreach (Item item in tempFoundItems)
             {
@@ -55,6 +67,7 @@ namespace m29_30_task_3
             }
 
             foundItems = tempFoundItems;
+            return true;
         }
     }
 }

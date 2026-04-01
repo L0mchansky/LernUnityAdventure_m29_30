@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace m29_30_task_3
@@ -19,10 +20,10 @@ namespace m29_30_task_3
             {
                 Debug.Log("KeyCode.Alpha1 нажат. Добавить 1 Dagger");
 
-                if (_inventory.TryAdd())
+                if (_inventory.CanAdd())
                 {
-                    _inventory.Add(new Item("Dagger"));
-                    Debug.Log("Добавлен");
+                    if (_inventory.TryAdd(new Item("Dagger")))
+                        Debug.Log("Добавлен");
                 }
             }
 
@@ -30,14 +31,8 @@ namespace m29_30_task_3
             {
                 Debug.Log("KeyCode.Alpha2 нажат. Добавить 1 Sword");
 
-                try
-                {
-                    _inventory.Add(new Item("Sword"));
-                }
-                catch (InvenvotryIsFullException)
-                {
-                    //Action
-                }
+                if (_inventory.TryAdd(new Item("Sword")))
+                    Debug.Log("Добавлен");
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -46,13 +41,12 @@ namespace m29_30_task_3
 
                 try
                 {
-                    _inventory.TryGetItemsBy("Dagger", 2, out IReadOnlyList<Item> foundItems);
+                    if (_inventory.TryGetItemsBy("Dagger", 2, out IReadOnlyList<Item> foundItems))
+                    {
+                        //Action
+                    }
                 }
-                catch (InventoryItemNotFoundException)
-                {
-                    //Action
-                }
-                catch (InventoryInsufficientItemsException)
+                catch (ArgumentException)
                 {
                     //Action
                 }
@@ -64,13 +58,12 @@ namespace m29_30_task_3
 
                 try
                 {
-                    _inventory.TryGetItemsBy("Sword", 2, out IReadOnlyList<Item> foundItems);
+                    if (_inventory.TryGetItemsBy("Sword", 2, out IReadOnlyList<Item> foundItems))
+                    {
+                        //Action
+                    }
                 }
-                catch (InventoryItemNotFoundException)
-                {
-                    //Action
-                }
-                catch (InventoryInsufficientItemsException)
+                catch (ArgumentException)
                 {
                     //Action
                 }
