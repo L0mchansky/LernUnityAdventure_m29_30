@@ -43,7 +43,7 @@ namespace m29_30_task_3
                 {
                     if (_inventory.TryGetItemsBy("Dagger", 2, out IReadOnlyList<Item> foundItems))
                     {
-                        //Action
+                        Debug.Log($"Получено {foundItems.Count}");
                     }
                 }
                 catch (ArgumentException)
@@ -60,7 +60,7 @@ namespace m29_30_task_3
                 {
                     if (_inventory.TryGetItemsBy("Sword", 2, out IReadOnlyList<Item> foundItems))
                     {
-                        //Action
+                        Debug.Log($"Получено {foundItems.Count}");
                     }
                 }
                 catch (ArgumentException)

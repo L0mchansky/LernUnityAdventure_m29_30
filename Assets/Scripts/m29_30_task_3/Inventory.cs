@@ -24,7 +24,7 @@ namespace m29_30_task_3
             if (items.Count > maxSize)
                 throw new ArgumentException($"Указаны не верные входные данные. Кол-во объектов превышает максимальный размер инвентаря: maxSize: {maxSize}; items.Count: {items.Count}");
 
-            _items = items;
+            _items = new List<Item>(items);
         }
 
         public bool CanAdd() => _items.Count != _maxSize;

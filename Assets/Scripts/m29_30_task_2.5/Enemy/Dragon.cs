@@ -8,15 +8,13 @@ namespace m29_30_task_2._5
         public int Health { get; private set; }
         public int AttackPower { get; private set; }
 
-        public void Initialize(EnemySettings settings)
+        public void Initialize(DragonSettings settings)
         {
-            DragonSettings dragonSettings = settings as DragonSettings;
-
-            if (dragonSettings == null)
+            if (settings == null)
                 throw new ArgumentException("Expected DragonSettings");
 
-            Health = dragonSettings.Health;
-            AttackPower = dragonSettings.AttackPower;
+            Health = settings.Health;
+            AttackPower = settings.AttackPower;
         }
     }
 }

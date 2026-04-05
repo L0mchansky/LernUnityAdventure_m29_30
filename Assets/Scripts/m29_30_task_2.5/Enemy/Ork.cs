@@ -8,15 +8,13 @@ namespace m29_30_task_2._5
         public int Health { get; private set; }
         public int Armor { get; private set; }
 
-        public void Initialize(EnemySettings settings)
+        public void Initialize(OrkSettings settings)
         {
-            OrkSettings orkSettings = settings as OrkSettings;
-
-            if (orkSettings == null)
+            if (settings == null)
                 throw new ArgumentException("Expected OrkSettings");
 
-            Health = orkSettings.Health;
-            Armor = orkSettings.Armor;
+            Health = settings.Health;
+            Armor = settings.Armor;
         }
     }
 }
